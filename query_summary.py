@@ -9,7 +9,7 @@ import shodan
 import sys
 
 # Configuration
-API_KEY = 'uhGos8nRqw4E8g0Gdr3b34kaDM39iOa2'
+API_KEY = 'your-API-key'
 
 # The list of properties we want summary information on
 FACETS = [
