@@ -9,15 +9,11 @@ import shodan
 import sys
 
 # Configuration
-<<<<<<< HEAD
 import os
 home_dir =  os.path.expanduser('~')
 f = open(home_dir + '/api_keys/shodan_api', 'r')
 API_KEY = f.readline().splitlines()[0]
 print API_KEY
-=======
-API_KEY = 'your-API-key'
->>>>>>> 9fd7e6bea57e352fce382413ec398cbdb567ccd1
 
 # The list of properties we want summary information on
 FACETS = [
