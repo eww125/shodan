@@ -13,7 +13,7 @@ import os
 home_dir =  os.path.expanduser('~')
 f = open(home_dir + '/api_keys/shodan_api', 'r')
 API_KEY = f.readline().splitlines()[0]
-print API_KEY
+print(API_KEY)
 
 # The list of properties we want summary information on
 FACETS = [
@@ -38,7 +38,7 @@ FACET_TITLES = {
 
 # Input validation
 if len(sys.argv) == 1:
-    print 'Usage: %s <search query>' % sys.argv[0]
+    print('Usage: %s <search query>' % sys.argv[0])
     sys.exit(1)
 
 try:
@@ -52,22 +52,22 @@ try:
     # And it also runs faster than doing a search().
     result = api.count(query, facets=FACETS)
 
-    print 'Shodan Summary Information'
-    print 'Query: %s' % query
-    print 'Total Results: %s\n' % result['total']
+    print('Shodan Summary Information')
+    print('Query: %s' % query)
+    print('Total Results: %s\n % result['total'])
 
     # Print the summary info from the facets
     for facet in result['facets']:
-        print FACET_TITLES[facet]
+        print(FACET_TITLES[facet])
 
         for term in result['facets'][facet]:
-            print '%s: %s' % (term['value'], term['count'])
+            print('%s: %s' % (term['value'], term['count']))
 
         # Print an empty line between summary info
-        print ''
+        print('')
 
 except Exception, e:
-    print 'Error: %s' % e
+    print('Error: %s' % e)
     sys.exit(1)
 
 """
